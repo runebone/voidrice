@@ -22,3 +22,5 @@ cfl	${XDG_CONFIG_HOME:-$HOME/.config}/lf/lfrc		# lf (file browser) config
 cfL	${XDG_CONFIG_HOME:-$HOME/.config}/lf/scope		# lf's scope/preview file
 cfX	${XDG_CONFIG_HOME:-$HOME/.config}/sxiv/exec/key-handler	# sxiv (image viewer) key/script handler
 cfA	${XDG_CONFIG_HOME:-$HOME/.config}/alacritty/alacritty.yml
+cfd	${XDG_CONFIG_HOME:-$HOME/.config}/shell/bm-dirs
+cff	${XDG_CONFIG_HOME:-$HOME/.config}/shell/bm-files
