@@ -973,3 +973,6 @@ schemes:
       white:   '#ffffff'
 
 colors: *xterm
+
+font:
+  size: 12.0
