@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 # profile file. Runs on login. Environmental variables are set here.
+export LC_ALL=en_US.UTF-8
 
 # If you don't plan on reverting to bash, you can remove the link in ~/.profile
 # to clean up.
@@ -12,8 +13,8 @@ unsetopt PROMPT_SP
 
 # Default programs:
 export EDITOR="nvim"
-export TERMINAL="st"
-export BROWSER="brave"
+export TERMINAL="alacritty"
+export BROWSER="chromium"
 
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"
