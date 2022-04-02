@@ -30,6 +30,12 @@ set noruler
 set laststatus=0
 set noshowcmd
 
+" Modified by me
+set tabstop=4
+set shiftwidth=4
+set expandtab
+" ==============
+
 " Some basics:
 	nnoremap c "_c
 	set nocompatible
