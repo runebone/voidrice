@@ -13,3 +13,5 @@ pp  ${XDG_PICTURES_DIR:-$HOME/Pictures}
 wp  ${XDG_PICTURES_DIR:-$HOME/Pictures/wallpapers}
 sc  ${XDG_PICTURES_DIR:-$HOME/Pictures/screenshots}
 vv  ${XDG_VIDEOS_DIR:-$HOME/Videos}
+t   ${XDG_DOWNLOAD_DIR:-$HOME/Downloads/telegram}
+b   ${XDG_DOWNLOAD_DIR:-$HOME/Downloads/books}
