@@ -45,7 +45,10 @@ alias \
 	xq="xbps-query" \
 	z="zathura" \
     tg="telegram-desktop" \
-    mm="pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+    mm="pactl set-source-mute @DEFAULT_SOURCE@ toggle" \
+    x="xournalpp" \
+    lo="libreoffice" \
+    s="sioyek"
 
 alias \
 	lf="lfub" \
