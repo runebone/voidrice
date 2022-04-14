@@ -16,3 +16,4 @@ vv  ${XDG_VIDEOS_DIR:-$HOME/Videos}
 t   ${XDG_DOWNLOAD_DIR:-$HOME/Downloads/telegram}
 b   ${XDG_DOWNLOAD_DIR:-$HOME/Downloads/books}
 o   ${XDG_DOWNLOAD_DIR:-$HOME/Vault}
+L   ${XDG_DOWNLOAD_DIR:-$HOME/Documents/LaTeX}
