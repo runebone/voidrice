@@ -18,3 +18,4 @@ b   ${XDG_DOWNLOAD_DIR:-$HOME/Downloads/books}
 o   ${XDG_DOWNLOAD_DIR:-$HOME/Vault}
 L   ${XDG_DOWNLOAD_DIR:-$HOME/Documents/LaTeX}
 tt  ${XDG_DOWNLOAD_DIR:-$HOME/Downloads/torrent}
+c   ${XDG_DOWNLOAD_DIR:-$HOME/Code}
