@@ -20,7 +20,8 @@ alias \
 	mkd="mkdir -pv" \
 	yt="yt-dlp --embed-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
-	ffmpeg="ffmpeg -hide_banner"
+	ffmpeg="ffmpeg -hide_banner" \
+    ssh="TERM=xterm-256color ssh"
 
 # Colorize commands when possible.
 alias \
