@@ -16,8 +16,10 @@ Plug 'lukesmithxyz/vimling'
 Plug 'vimwiki/vimwiki'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 Plug 'ap/vim-css-color'
 Plug 'srcery-colors/srcery-vim'
+Plug 'neoclide/coc.nvim'
 call plug#end()
 
 set title
@@ -40,6 +42,18 @@ set t_Co=256
 colorscheme srcery
 
 set guifont=Mononoki:h9
+
+" Tab completion for Coc
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
 " ==============
 
 " Some basics:
