@@ -16,10 +16,14 @@ Plug 'lukesmithxyz/vimling'
 Plug 'vimwiki/vimwiki'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
 Plug 'ap/vim-css-color'
 Plug 'srcery-colors/srcery-vim'
 Plug 'neoclide/coc.nvim'
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-gitgutter'
+" Enable easytags
+"Plug 'xolox/vim-misc'
+"Plug 'xolox/vim-easytags'
 call plug#end()
 
 set title
@@ -54,6 +58,10 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+
+" Set cursorline and cursorcolumn
+set cul
+set cuc
 " ==============
 
 " Some basics:
