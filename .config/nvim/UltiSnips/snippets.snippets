@@ -1,0 +1,14 @@
+snippet todo "todo" bA
+# TODO [ `date "+%d.%m.%Y (%A) %H:%M"` ]:
+# ${1:description}
+endsnippet
+
+snippet snip "snippet snippet" bA
+snippet ${1:name} "${2:description}" ${3:b}
+$0
+`echo endsnippet`
+endsnippet
+
+snippet "(\d)V" "quick visual" rA
+\$\{`!p snip.rv = match.group(1)`:\$\{VISUAL\}\}
+endsnippet
