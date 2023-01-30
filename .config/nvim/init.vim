@@ -213,6 +213,50 @@ inoremap {<CR> {<CR>}<C-o>O
 inoremap [<CR> [<CR>]<C-o>O
 inoremap (<CR> (<CR>)<C-o>O
 
+function! SwapSourceHeader()
+    let l:current_file = expand('%')
+    let l:filename = expand('%:r')
+    let l:ext = expand('%:e')
+    let l:msg = 'No corresponding file found.'
+
+    if ext == 'cpp'
+        if filereadable(filename . '.h')
+            edit %:r.h
+        elseif filereadable(filename . '.hpp')
+            edit %:r.hpp
+        else
+            echo msg
+        endif
+    elseif ext == 'c'
+        echo filename . '.h'
+        if filereadable(filename . '.h')
+            edit %:r.h
+        else
+            echo msg
+        endif
+    elseif ext == 'h'
+        if filereadable(filename . '.cpp')
+            edit %:r.cpp
+        elseif filereadable(filename . '.c')
+            edit %:r.c
+        else
+            echo msg
+        endif
+    elseif ext == 'hpp'
+        if filereadable(filename . '.cpp')
+            edit %:r.cpp
+        else
+            echo msg
+        endif
+    else
+        echo msg
+    endif
+endfunction
+
+nnoremap <F2> :e %<.cpp
+nnoremap <F3> :e %<.h
+nnoremap <F4> :call SwapSourceHeader()<CR>
+
 " nnoremap <C-j> jzz
 " nnoremap <C-k> kzz
 
