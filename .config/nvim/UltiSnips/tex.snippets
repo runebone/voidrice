@@ -1,4 +1,4 @@
-snippet todo "This is a TODO reminder" b
+snippet todo "todo reminder" b
 % TODO [ `date "+%d.%m.%Y (%A) %H:%M"` ]:
 % ${1:description}
 endsnippet
@@ -19,6 +19,10 @@ snippet TO "to (->)" wA
 \to
 endsnippet
 
+snippet set "set consisting of" w
+\left\\{ ${1:x \in X}\ |\ ${2:f(x) = y} \right\\}$0
+endsnippet
+
 # brackets
 snippet lr{ "left right {} brackets" wA
 \left\\{ ${1:${VISUAL}} \right\\}$0
@@ -35,8 +39,19 @@ endsnippet
 snippet lr| "left right ||" wA
 \left| ${1:${VISUAL}} \right|$0
 endsnippet
+
+# TODO [ 10.06.2022 (Friday) 15:02 ]:
+# auto-add brackets (python script):
+# (lsdkfd) <c-l> -> (lsdkfd) (|) -> (lsdkfd) (jkjk) <c-l> -> (lsdkfd) (jkjk) (|) <c-l> -> (lsdkfd) (jkjk)|
+snippet brim "bracketized inline math" wA
+\$\left( ${1:${VISUAL}} \right)$1\$$0
+endsnippet
 # end of brackets
 
-snippet emp "emphasize" wA
+snippet emp "emphasize" w
 \emph{${1:${VISUAL}}}$0
+endsnippet
+
+snippet ldd "\ldots" wA
+\ldots
 endsnippet

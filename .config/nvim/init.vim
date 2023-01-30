@@ -1,4 +1,4 @@
-let mapleader =","
+let mapleader =" "
 
 if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
 	echo "Downloading junegunn/vim-plug to manage plugins..."
@@ -22,9 +22,14 @@ Plug 'neoclide/coc.nvim'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'sirver/ultisnips'
+"Plug 'lervag/vimtex'
 " Enable easytags
 "Plug 'xolox/vim-misc'
 "Plug 'xolox/vim-easytags'
+Plug 'tikhomirov/vim-glsl'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'mattn/emmet-vim'
+Plug 'ghifarit53/tokyonight-vim'
 call plug#end()
 
 set title
@@ -43,16 +48,28 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+set autochdir
+
 set t_Co=256
 colorscheme srcery
 
-set guifont=Mononoki:h9
+" " Tokyonight
+" set termguicolors
 
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-l>"
-let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+" let g:tokyonight_style = 'night' " available: night, storm
+" let g:tokyonight_enable_italic = 1
+" let g:tokyonight_transparent_background = 1
 
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
+" colorscheme tokyonight
+" Tokyonight
+
+set guifont=Mononoki:h11
+
+let g:UltiSnipsExpandTrigger="<C-j>"
+let g:UltiSnipsJumpForwardTrigger="<C-l>"
+let g:UltiSnipsJumpBackwardTrigger="<C-h>"
+
+let g:UltiSnipsSnippetDirectories=['~/.config/nvim/UltiSnips']
 
 " Tab completion for Coc
 " use <tab> for trigger completion and navigate to the next complete item
@@ -66,9 +83,24 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
+nnoremap <c-p> :GFiles<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>= :vertical resize +5<CR>
+nnoremap <leader>- :vertical resize -5<CR>
+nnoremap <leader>0 :resize 100<CR>
+
+" VimTeX globals
+"let g:tex_flavor='latex'
+"let g:vimtex_view_method='zathura'
+"let g:vimtex_quickfix_mode=0
+
 " Set cursorline and cursorcolumn
 set cul
 set cuc
+
+set colorcolumn=80
+"highlight ColorColumn ctermbg=0
+
 " ==============
 
 " Some basics:
@@ -85,7 +117,8 @@ set cuc
 " Perform dot commands over visual blocks:
 	vnoremap . :normal .<CR>
 " Goyo plugin makes text more readable when writing prose:
-	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
+	map <leader>g :Goyo \| set linebreak<CR>
+                "\| set bg=light \| set linebreak<CR>
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
@@ -101,17 +134,17 @@ set cuc
     endif
 
 " vimling:
-	nm <leader><leader>d :call ToggleDeadKeys()<CR>
-	imap <leader><leader>d <esc>:call ToggleDeadKeys()<CR>a
-	nm <leader><leader>i :call ToggleIPA()<CR>
-	imap <leader><leader>i <esc>:call ToggleIPA()<CR>a
-	nm <leader><leader>q :call ToggleProse()<CR>
+	" nm <leader><leader>d :call ToggleDeadKeys()<CR>
+	" imap <leader><leader>d <esc>:call ToggleDeadKeys()<CR>a
+	" nm <leader><leader>i :call ToggleIPA()<CR>
+	" imap <leader><leader>i <esc>:call ToggleIPA()<CR>a
+	" nm <leader><leader>q :call ToggleProse()<CR>
 
 " Shortcutting split navigation, saving a keypress:
-	map <C-h> <C-w>h
-	map <C-j> <C-w>j
-	map <C-k> <C-w>k
-	map <C-l> <C-w>l
+	" map <C-h> <C-w>h
+	" map <C-j> <C-w>j
+	" map <C-k> <C-w>k
+	" map <C-l> <C-w>l
 
 " Replace ex mode with gq
 	map Q gq
@@ -173,8 +206,21 @@ if &diff
 endif
 
 " My snippets
-inoremap <leader>4 <Esc>$a
-nnoremap <leader>4 $
+" inoremap <leader>4 <Esc>$a
+" nnoremap <leader>4 $
+
+inoremap {<CR> {<CR>}<C-o>O
+inoremap [<CR> [<CR>]<C-o>O
+inoremap (<CR> (<CR>)<C-o>O
+
+" nnoremap <C-j> jzz
+" nnoremap <C-k> kzz
+
+nnoremap <leader>d ?def\s\\|func\s\\|fn\s\\|class\szt5
+" inoremap <leader>j <Esc>j$a
+" inoremap <leader>k <Esc>k$a
+
+" inoremap <leader>z <Esc>zza
 
 " Function for toggling the bottom statusbar:
 let s:hidden_all = 0

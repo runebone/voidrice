@@ -7,7 +7,10 @@ autoload -U colors && colors	# Load colors
 # PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 # Kali theme
-PS1="%B%{$fg[red]%}%n@%M%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}%b$ "
+#PS1="%B%{$fg[red]%}%n@%M%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}%b$ "
+bold=$(printf "\033[1m")
+PS1="%B%{$fg[red]%}%n %{$reset_color$bold%}at %{$fg[cyan]%}%M%{$reset_color$bold%} in %{$fg[magenta]%}%~%{$reset_color$bold%}%b"
+PS1=${PS1}$(printf "\n$bold$ $reset_color")
 
 setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.

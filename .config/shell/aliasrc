@@ -50,7 +50,7 @@ alias \
     x="xournalpp" \
     lo="libreoffice" \
     s="sioyek" \
-    nv="neovide --multigrid"
+    nv="neovide --nofork --multigrid"
 
 alias \
 	lf="lfub" \

@@ -6,6 +6,7 @@ d   ${XDG_DOCUMENTS_DIR:-$HOME/Documents}
 dt  ${XDG_DATA_HOME:-$HOME/.local/share}
 rr  $HOME/.local/src
 lb  $HOME/.local/bin
+sb  $HOME/.local/bin/statusbar
 h   $HOME
 m   ${XDG_MUSIC_DIR:-$HOME/Music}
 mn  /mnt
@@ -19,3 +20,5 @@ o   ${XDG_DOWNLOAD_DIR:-$HOME/Vault}
 L   ${XDG_DOWNLOAD_DIR:-$HOME/Documents/LaTeX}
 tt  ${XDG_DOWNLOAD_DIR:-$HOME/Downloads/torrent}
 c   ${XDG_DOWNLOAD_DIR:-$HOME/Code}
+u   ${XDG_DOWNLOAD_DIR:-$HOME/Downloads/telegram/dwm_backup/university}
+us  $HOME/.config/nvim/UltiSnips

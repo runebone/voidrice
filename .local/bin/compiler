@@ -17,7 +17,7 @@ ext="${file##*.}"
 cd "$dir" || exit 1
 
 textype() { \
-	command="pdflatex"
+	command="xelatex"
 	( head -n5 "$file" | grep -qi 'xelatex' ) && command="xelatex"
 	$command --output-directory="$dir" "$base" &&
 	grep -qi addbibresource "$file" &&

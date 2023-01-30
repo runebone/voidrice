@@ -5,18 +5,13 @@ snippet beg "begin{} / end{}" bA
 endsnippet
 
 snippet mk "Math" wA
-$${1:${VISUAL}}$`!p
-if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
-    snip.rv = ' '
-else:
-    snip.rv = ''
-`$2
+\$${1:${VISUAL}}\$$0
 endsnippet
 
 snippet dm "Math" wA
 \[
 ${1:${VISUAL}}
-.\] $0
+.\]$0
 endsnippet
 
 snippet => "implies" iA
@@ -28,12 +23,12 @@ snippet =< "implied by" iA
 endsnippet
 
 # a12 -> a_12
-snippet '([A-Za-z])(\d)' "auto subscript" wrA
+snippet '([A-Za-z])(\d)' "auto subscript" wr
 `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
 endsnippet
 
 # a_12 -> a_{12}
-snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
+snippet '([A-Za-z])_(\d\d)' "auto subscript2" wr
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
 endsnippet
 
@@ -42,17 +37,17 @@ snippet // "Fraction 1" iA
 \\frac{$1}{$2}$0
 endsnippet
 
-snippet / "Fraction VISUAL" iA
+snippet / "Fraction VISUAL" i
 \\frac{${VISUAL}}{$1}$0
 endsnippet
 
 priority 1000
 
-snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction 2" wrA
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction 2" wr
 \\frac{`!p snip.rv = match.group(1)`}{$1}$0
 endsnippet
 
-snippet '.*\)/' "() Fraction" wrA
+snippet '.*\)/' "() Fraction" wr
 `!p
 stripped = match.string[:-1]
 depth = 0
